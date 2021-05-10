@@ -1,4 +1,8 @@
 //import react into the bundle
+//import React from "react";
+//import ReactDOM from "react-dom";
+
+//import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -9,7 +13,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../styles/index.scss";
 
 //import your own components
-import Layout from "./layout";
+import { InputToDo } from "./component/inputToDo.js";
+import injectContext from "./store/appContext";
 
 //render your react application
-ReactDOM.render(<Layout />, document.querySelector("#app"));
+const TodoList = injectContext(InputToDo);
+ReactDOM.render(<TodoList />, document.querySelector("#app"));
